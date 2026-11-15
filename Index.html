@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131d">
+  <meta name="description" content="Gatekeeper Shift - Game strategi balapan grid dua pemain.">
+  <title>Gatekeeper Shift — Tukar Gerbang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">TACTICAL GRID RACE · 2 PLAYERS</p>
+        <h1>Gatekeeper Shift</h1>
+        <p class="subtitle">
+          Putar gerbang, atur jalur, dan jadilah pemain
+          pertama yang mencapai garis finis!
+        </p>
+      </div>
+      <div class="local-tag">● LOCAL MULTIPLAYER</div>
+    </header>
+
+    <section class="layout">
+
+      <section class="game-panel">
+
+        <div class="scoreboard">
+          <div class="player-card red active" id="card1">
+            <span class="player-dot"></span>
+            <div>
+              <span class="player-name">Pemain 1</span>
+              <span class="player-sub">Merah</span>
+            </div>
+          </div>
+
+          <div class="player-card blue" id="card2">
+            <span class="player-dot"></span>
+            <div>
+              <span class="player-name">Pemain 2</span>
+              <span class="player-sub">Biru</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="turn-banner">
+          <div>
+            <div class="turn-label">GILIRAN SEKARANG</div>
+            <div id="turnName">Pemain 1 · Merah</div>
+          </div>
+          <div id="turnCount">Giliran 1</div>
+        </div>
+
+        <div class="board-wrap">
+          <div class="board" id="board"></div>
+
+          <div class="board-legend">
+            <span>🟨 Gerbang</span>
+            <span>🟩 Finis</span>
+            <span>✕ Rintangan</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="btn gold" id="selectGateBtn">
+            Pilih Gerbang
+          </button>
+
+          <button class="btn primary" id="rotateBtn" disabled>
+            Putar 90° ↻
+          </button>
+
+          <button class="btn" id="passBtn">
+            Akhiri Giliran
+          </button>
+
+          <button class="btn subtle" id="resetBtn">
+            ↻ Mulai Ulang
+          </button>
+        </div>
+
+        <div class="status" id="status" aria-live="polite">
+          Pemain 1, mulai! Klik petak hijau untuk bergerak.
+        </div>
+
+      </section>
+
+      <aside class="side-panel">
+        <h2>📖 Cara Bermain</h2>
+
+        <ol class="rule-list">
+          <li>
+            <b>Bergerak satu petak.</b>
+            Klik petak hijau di sebelah pion.
+          </li>
+
+          <li>
+            <b>Putar gerbang.</b>
+            Pilih gerbang kuning lalu tekan Putar 90°.
+          </li>
+
+          <li>
+            <b>Ikuti arah panah.</b>
+            Saat berada di petak gerbang, pion hanya
+            bisa keluar sesuai arah panah.
+          </li>
+
+          <li>
+            <b>Capai garis finis.</b>
+            Pemain pertama yang mencapai bintang hijau menang!
+          </li>
+        </ol>
+
+        <div class="divider"></div>
+
+        <h2>🎯 Strategi</h2>
+
+        <div class="gate-help">
+          Gunakan gerbang untuk mengubah jalur lawan.
+          Arahkan panah menuju rintangan untuk membuat
+          lawan tertahan!
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>📜 Riwayat Permainan</h2>
+        <ul class="history" id="history">
+          <li>Permainan dimulai.</li>
+        </ul>
+      </aside>
+
+    </section>
+
+    <footer>
+      Gatekeeper Shift © 2026 · Created for strategy game lovers.
+    </footer>
+  </main>
+
+  <div class="win-overlay" id="winOverlay">
+    <div class="win-card">
+      <div class="win-icon">🏆</div>
+      <h2 id="winTitle">Pemenang!</h2>
+      <p id="winMessage">Berhasil mencapai garis finis.</p>
+      <button class="btn primary" id="playAgainBtn">
+        Main Lagi
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
